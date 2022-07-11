@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LFET version="LF-ET 2.2.0 (220208a)" language="German" saveDate="2022.02.10 at 10:53:04 CET" saveUser="lfhl">
+  <Conditions>
+    <Condition uId="11446800829457960">
+      <Title language="German" value="Zubereitungsphase?"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="15622181404256862">
+          <Symbol language="German" value="1"/>
+          <Title language="German" value="Phase 1 - Kaffee-Variante auswählen"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="// Alle Regelgruppen, die mit der Testschritteigenschaft exit=true in der&lt;br/&gt;// Testanweisung zum Regelgruppen-Bedigungswert gekennzeichnet sind, werden&lt;br/&gt;// bei der Testfallberechnung als gewünschter Ende-Zustand berücksichtigt&lt;br/&gt;&lt;br/&gt;exit=true"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15622181404276864">
+          <Symbol language="German" value="2"/>
+          <Title language="German" value="Phase 2 - Zusatzoptionen auswählen"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15622185893736871">
+          <Symbol language="German" value="3"/>
+          <Title language="German" value="Phase 3 - Kaffe zubereiten"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="15622191444217009">
+      <Title language="German" value="Getränk ausgewählt?"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="15622191824477075">
+          <Symbol language="German" value="J"/>
+          <Title language="German" value="Ja"/>
+          <TestValue group="*ti.check" type="tsi" value="Clear GetraenkAusgewaehlt"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15622191824497077">
+          <Symbol language="German" value="N"/>
+          <Title language="German" value="Nein"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="15622186053996901">
+      <Title language="German" value="Gewähltes Getränk?"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="15622187392716951">
+          <Symbol language="German" value="Kaf"/>
+          <Title language="German" value="Cafe Crema"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie auf die Taste &quot;${*LFET.Title}&quot;."/>
+          <TestValue group="Standard" type="tse" value="Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und über der Kaffeetasse &quot;${*LFET.Title}&quot; steht."/>
+          <TestValue group="*ti.check" type="tsi" value="Clear AuswahlGetraenk"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;${*LFET.Title} auswählen&quot;"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15622187392736953">
+          <Symbol language="German" value="Cap"/>
+          <Title language="German" value="Cappucino"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie auf die Taste &quot;${*LFET.Title}&quot;."/>
+          <TestValue group="Standard" type="tse" value="Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und darüber ${*LFET.Title} steht."/>
+          <TestValue group="*ti.check" type="tsi" value="Clear AuswahlGetraenk"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;${*LFET.Title} auswählen&quot;"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15622187932456958">
+          <Symbol language="German" value="Mac"/>
+          <Title language="German" value="Latte Macciato"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie auf die Taste &quot;${*LFET.Title}&quot;."/>
+          <TestValue group="Standard" type="tse" value="Prüfen Sie, ob im Display ein Glas zu sehen ist und darüber ${*LFET.Title} steht."/>
+          <TestValue group="*ti.check" type="tsi" value="Clear AuswahlGetraenk"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;${*LFET.Title} auswählen&quot;"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15622188102296961">
+          <Symbol language="German" value="Cho"/>
+          <Title language="German" value="Heiße Schokolade"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie auf die Taste &quot;${*LFET.Title}&quot;."/>
+          <TestValue group="Standard" type="tse" value="Prüfen Sie, ob im Display eine Tasse zu sehen ist und ${*LFET.Title} darüber steht."/>
+          <TestValue group="*ti.check" type="tsi" value="Clear AuswahlGetraenk"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;${*LFET.Title} auswählen&quot;"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="15622193202567161">
+      <Title language="German" value="Taste Zubereitung gedrückt?"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="15622263928053574">
+          <Symbol language="German" value="J"/>
+          <Title language="German" value="Ja"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie auf die Schaltfläche Zubereitung."/>
+          <TestValue group="*ti.check" type="tsi" value="Clear TasteZubereitungGedrueckt"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;Zubereitung starten&quot;"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15622263928073576">
+          <Symbol language="German" value="N"/>
+          <Title language="German" value="Nein"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="15622198106809453">
+      <Title language="German" value="Taste Zucker gedückt?"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="15740986857748237">
+          <Symbol language="German" value="J"/>
+          <Title language="German" value="Ja"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie auf die Schaltfläche Zucker."/>
+          <TestValue group="*ti.check" type="tsi" value="TasteZuckerAktiv = Ja&lt;br/&gt;Set TasteZuckerGedrueckt = Ja"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;Taste Zucker drücken&quot;"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15740986857768239">
+          <Symbol language="German" value="N"/>
+          <Title language="German" value="Nein"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="15622198608079461">
+      <Title language="German" value="Taste Milch gedrückt?"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="15740986861098247">
+          <Symbol language="German" value="J"/>
+          <Title language="German" value="Ja"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie auf die Schaltfläche Milch."/>
+          <TestValue group="*ti.check" type="tsi" value="TasteMilchAktiv = Ja&lt;br/&gt;Set TasteMilchGedrueckt = Ja"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;Taste Milch drücken&quot;"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15740986861118249">
+          <Symbol language="German" value="N"/>
+          <Title language="German" value="Nein"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="15622186061906902">
+      <Title language="German" value="Zubereitung abgebrochen?"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="15740986861188256">
+          <Symbol language="German" value="J"/>
+          <Title language="German" value="Ja"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie auf die Schaltfläche Abbrechen."/>
+          <TestValue group="*ti.check" type="tsi" value="Clear ZubereitungAbgebrochen"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;Zubereitung abbrechen&quot;"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15740986861208258">
+          <Symbol language="German" value="N"/>
+          <Title language="German" value="Nein"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="15622192818727158">
+      <Title language="German" value="Zubereitung beendet?"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="15740986861288266">
+          <Symbol language="German" value="J"/>
+          <Title language="German" value="Ja"/>
+          <TestValue group="*ti.check" type="tsi" value="Clear ZubereitungBeendet"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="15740986861308268">
+          <Symbol language="German" value="N"/>
+          <Title language="German" value="Nein"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+  </Conditions>
+  <Actions>
+    <Action uId="11446800828767967">
+      <Title language="German" value="Taste Zucker aktiv (wählbar)"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="15622193879137269">
+          <Symbol language="German" value="0"/>
+          <Title language="German" value="nicht aktiv"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie die Schalfläche &quot;Zucker&quot;."/>
+          <TestValue group="Standard" type="tse" value="Der Vollautomat darf nicht &quot;piepsen&quot; und die Taste soll ausgegraut bleiben."/>
+          <TestValue group="*ti.check" type="tsi" value="Set TasteZuckerAktiv = Nein"/>
+          <TestValue group="*ti.att.standard" type="tse" value="name=&quot;Zuckertaste auf inaktiv prüfen&quot;"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="15622194154257276">
+          <Symbol language="German" value="1"/>
+          <Title language="German" value="aktiv"/>
+          <TestValue group="Standard" type="tse" value="Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."/>
+          <TestValue group="*ti.check" type="tsi" value="Set TasteZuckerAktiv = Ja"/>
+          <TestValue group="*ti.att.standard" type="tse" value="name=&quot;Zuckertaste auf aktiv prüfen&quot;"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="15622190979577007">
+      <Title language="German" value="Taste Milch aktiv (wählbar)"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="15622194422788030">
+          <Symbol language="German" value="0"/>
+          <Title language="German" value="nicht aktiv"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie die Schaltfläche Milch."/>
+          <TestValue group="Standard" type="tse" value="Der Vollautomat darf nicht &quot;piepsen&quot; und die Taste soll ausgegraut bleiben."/>
+          <TestValue group="*ti.check" type="tsi" value="Set TasteMilchAktiv = Nein"/>
+          <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;Milchtaste auf inaktiv prüfen&quot;"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="15622194422818033">
+          <Symbol language="German" value="1"/>
+          <Title language="German" value="aktiv"/>
+          <TestValue group="Standard" type="tse" value="Prüfen Sie, ob die Schaltfläche Milch im Display aktiv dargestellt wird."/>
+          <TestValue group="*ti.check" type="tsi" value="Set TasteMilchAktiv = Ja"/>
+          <TestValue group="*ti.att.standard" type="tse" value="name=&quot;Milchtaste auf aktiv prüfen&quot;"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="15622193743787165">
+      <Title language="German" value="Taste Zubereitung aktiv (wählbar)"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="15622194538008253">
+          <Symbol language="German" value="0"/>
+          <Title language="German" value="nicht aktiv"/>
+          <TestValue group="Standard" type="tsi" value="Drücken Sie die Taste Zubereitung."/>
+          <TestValue group="Standard" type="tse" value="Der Vollautomat darf nicht &quot;piepsen&quot; und die Taste soll ausgegraut bleiben."/>
+          <TestValue group="*ti.check" type="tsi" value="Set TasteZubereitungAktiv = Nein"/>
+          <TestValue group="*ti.att.standard" type="tse" value="name=&quot;${*LFET.Action.Title} auf inaktiv prüfen&quot;"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="15622194538038256">
+          <Symbol language="German" value="1"/>
+          <Title language="German" value="aktiv"/>
+          <TestValue group="Standard" type="tse" value="Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."/>
+          <TestValue group="*ti.check" type="tsi" value="Set TasteZubereitungAktiv = Ja"/>
+          <TestValue group="*ti.att.standard" type="tse" value="name=&quot;${*LFET.Action.Title} auf aktiv prüfen&quot;"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="15622195180098376">
+      <Title language="German" value="Getränk zubereiten"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="15622195401708514">
+          <Symbol language="German" value="X"/>
+          <Title language="German" value="Aktion ausführen"/>
+          <TestValue group="Standard" type="tse" value="Prüfen Sie, ob&lt;br/&gt;  - im Display eine Animation gestartet wurde und das Gefäß &quot;gefüllt&quot; wird&lt;br/&gt;  - das Gefäß unter der Getränkeausgabe gefüllt wird."/>
+          <TestValue group="*ti.att.standard" type="tse" value="name=&quot;Zubereitung des Getränks prüfen.&quot;"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="15622196022008651">
+      <Title language="German" value="Zubereitung beenden"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="15622209091501174">
+          <Symbol language="German" value="X"/>
+          <Title language="German" value="Aktion ausführen"/>
+          <TestValue group="Standard" type="tse" value="Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."/>
+          <TestValue group="*ti.att.standard" type="tse" value="name=&quot;Ende der Zubereitung prüfen&quot;"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="11446800829627977">
+      <Title language="German" value="Weiter mit Zubereitungsphase"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="15622197825079291">
+          <Symbol language="German" value="1"/>
+          <Title language="German" value="Phase 1 - Kaffee-Variante auswählen"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="15622197825899294">
+          <Symbol language="German" value="2"/>
+          <Title language="German" value="Phase 2 - Zusatzoptionen auswählen"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="15622197826369297">
+          <Symbol language="German" value="3"/>
+          <Title language="German" value="Phase 3 - Kaffe zubereiten"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16439713600090873">
+          <Symbol language="German" value="Ex"/>
+          <Title language="German" value="Exit, Ende der Verarbeitung"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+  </Actions>
+  <Rules lastId="28">
+    <Rule id="4">
+      <ConditionOccurrenceLink link="15622181404256862"/>
+      <ConditionOccurrenceLink link="15622191824477075"/>
+      <ConditionOccurrenceLink link="15622187392716951"/>
+      <ActionOccurrenceLink link="15622194154257276"/>
+      <ActionOccurrenceLink link="15622194422818033"/>
+      <ActionOccurrenceLink link="15622194538038256"/>
+      <ActionOccurrenceLink link="15622197825899294"/>
+    </Rule>
+    <Rule id="5">
+      <ConditionOccurrenceLink link="15622181404256862"/>
+      <ConditionOccurrenceLink link="15622191824477075"/>
+      <ConditionOccurrenceLink link="15622187392736953"/>
+      <ActionOccurrenceLink link="15622194154257276"/>
+      <ActionOccurrenceLink link="15622194422788030"/>
+      <ActionOccurrenceLink link="15622194538038256"/>
+      <ActionOccurrenceLink link="15622197825899294"/>
+    </Rule>
+    <Rule id="6">
+      <ConditionOccurrenceLink link="15622181404256862"/>
+      <ConditionOccurrenceLink link="15622191824477075"/>
+      <ConditionOccurrenceLink link="15622187932456958"/>
+      <ActionOccurrenceLink link="15622194154257276"/>
+      <ActionOccurrenceLink link="15622194422788030"/>
+      <ActionOccurrenceLink link="15622194538038256"/>
+      <ActionOccurrenceLink link="15622197825899294"/>
+    </Rule>
+    <Rule id="7">
+      <ConditionOccurrenceLink link="15622181404256862"/>
+      <ConditionOccurrenceLink link="15622191824477075"/>
+      <ConditionOccurrenceLink link="15622188102296961"/>
+      <ActionOccurrenceLink link="15622193879137269"/>
+      <ActionOccurrenceLink link="15622194422788030"/>
+      <ActionOccurrenceLink link="15622194538038256"/>
+      <ActionOccurrenceLink link="15622197825899294"/>
+    </Rule>
+    <Rule id="3">
+      <ConditionOccurrenceLink link="15622181404256862"/>
+      <ConditionOccurrenceLink link="15622191824497077"/>
+      <ActionOccurrenceLink link="15622193879137269"/>
+      <ActionOccurrenceLink link="15622194422788030"/>
+      <ActionOccurrenceLink link="15622194538008253"/>
+      <ActionOccurrenceLink link="15622197825079291"/>
+    </Rule>
+    <Rule id="17">
+      <ConditionOccurrenceLink link="15622181404276864"/>
+      <ActionOccurrenceLink link="15622193879137269"/>
+      <ActionOccurrenceLink link="15622194422788030"/>
+      <ActionOccurrenceLink link="15622194538008253"/>
+      <ActionOccurrenceLink link="15622195401708514"/>
+      <ActionOccurrenceLink link="15622197826369297"/>
+      <ConditionOccurrenceLink link="15622263928053574"/>
+    </Rule>
+    <Rule id="21">
+      <ConditionOccurrenceLink link="15622181404276864"/>
+      <ActionOccurrenceLink link="15622193879137269"/>
+      <ActionOccurrenceLink link="15622197825899294"/>
+      <ConditionOccurrenceLink link="15622263928073576"/>
+      <ConditionOccurrenceLink link="15740986857748237"/>
+    </Rule>
+    <Rule id="22">
+      <ConditionOccurrenceLink link="15622181404276864"/>
+      <ActionOccurrenceLink link="15622194422788030"/>
+      <ActionOccurrenceLink link="15622197825899294"/>
+      <ConditionOccurrenceLink link="15622263928073576"/>
+      <ConditionOccurrenceLink link="15740986857768239"/>
+      <ConditionOccurrenceLink link="15740986861098247"/>
+    </Rule>
+    <Rule id="23">
+      <ConditionOccurrenceLink link="15622181404276864"/>
+      <ActionOccurrenceLink link="15622197825899294"/>
+      <ConditionOccurrenceLink link="15622263928073576"/>
+      <ConditionOccurrenceLink link="15740986857768239"/>
+      <ConditionOccurrenceLink link="15740986861118249"/>
+    </Rule>
+    <Rule id="24">
+      <ConditionOccurrenceLink link="15622185893736871"/>
+      <ActionOccurrenceLink link="15622197825079291"/>
+      <ActionOccurrenceLink link="15622209091501174"/>
+      <ConditionOccurrenceLink link="15740986861188256"/>
+    </Rule>
+    <Rule id="25">
+      <ConditionOccurrenceLink link="15622185893736871"/>
+      <ActionOccurrenceLink link="15622197825079291"/>
+      <ActionOccurrenceLink link="15622209091501174"/>
+      <ConditionOccurrenceLink link="15740986861208258"/>
+      <ConditionOccurrenceLink link="15740986861288266"/>
+    </Rule>
+    <Rule id="26">
+      <ConditionOccurrenceLink link="15622185893736871"/>
+      <ActionOccurrenceLink link="15622197826369297"/>
+      <ConditionOccurrenceLink link="15740986861208258"/>
+      <ConditionOccurrenceLink link="15740986861308268"/>
+    </Rule>
+  </Rules>
+  <Title language="German" value="Steuerung Kaffeevollautomat"/>
+  <UrlsOut>
+    <Url title="Ordner" url="file:///./"/>
+  </UrlsOut>
+  <TestValueGroups selectedGroup="Standard">
+    <TestValueGroup name="Standard" tvgTiAtt="*ti.att.standard" tvgTiCheck="*ti.check">
+      <Config name="Excel" parms="-Group Standard -SwitchCoverage 1 -NonExecutableRules 50 -NonExecutablesRuleSeq 50 -RecommendedTestCases -Statistics -Protocol -ExportExcel Kaffeevollautomat.testcases.xlsx -OpenDirectoryOut"/>
+    </TestValueGroup>
+    <TestValueGroup name="*ti.att.standard"/>
+    <TestValueGroup name="*ti.check" description="Wenn diese Testanweisunggruppe existiert, dann werden ${*ti(check, ...)}-Anweisungen&lt;br/&gt;nur noch in dieser Gruppe ausgewertet.&lt;br/&gt;&lt;br/&gt;Das voranstehende &quot;${*ti(check,&quot; und das abschließende &quot;)}&quot; kann entfallen."/>
+  </TestValueGroups>
+  <TestValue group="*ti.check" type="tcpre" value="// Die Werte &quot;Ja&quot; und &quot;Nein&quot; als garantiert ungleiche Werte erzeugen.&lt;br/&gt;// Diese werden nicht mehr veändert, sondern nur als Vergleichs- oder&lt;br/&gt;// Zuweisungswerte (s.u.) verwendet&lt;br/&gt;Set Ja &lt; Nein&lt;br/&gt;&lt;br/&gt;// Die Grundeinstellung (unabhängig von Regelfolgen) für die Tasten&lt;br/&gt;// Zucker und Milch soll aktiv sein&lt;br/&gt;Set TasteZuckerAktiv = Ja&lt;br/&gt;Set TasteMilchAktiv = Ja"/>
+</LFET>

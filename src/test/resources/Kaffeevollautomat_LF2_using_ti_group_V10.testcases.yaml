@@ -1,0 +1,1243 @@
+encoding: UTF-8
+
+info: |
+  "Diese Datei wurde erzeugt durch LF-ET 2.2.1 (220711a) und Kommandozeile:
+  -GenTest '/opt/data/github/lohrfink/lfet-junit5-extension/src/test/resources/Kaffeevollautomat_LF2_using_ti_group_V10.lfet' -Group 'Standard' -SwitchCoverage '1' -NonExecutableRules '50' -NonExecutablesRuleSeq '50' -RecommendedTestCases -Statistics -Protocol -OutYaml 'Kaffeevollautomat_LF2_using_ti_group_V10.testcases.yaml' -OpenFileOut -OpenDirectoryOut
+  
+  Aktueller Benutzer: constantin
+  Aktuelles Verzeichnis (user.dir): '/opt/lfet'
+  Benötigte Zeit: 00:00:03.270 (11.07.2022 23:22:01.818 - 11.07.2022 23:22:05.088)
+  
+  Entscheidungstabelle: /opt/data/github/lohrfink/lfet-junit5-extension/src/test/resources/Kaffeevollautomat_LF2_using_ti_group_V10.lfet
+  
+  TestValueGroups: Standard, *ti.att.standard, *ti.check
+  Config: 
+  
+  Testfälle mit Fehlern: 0
+  
+  Testfälle mit Warnungen: 0
+  
+  Informationen: 0"
+
+testsuites:
+
+  - testsuite: "Empfohlene Testfälle"
+
+    testcases:
+
+      - testcase: "0001 Kaffeevollautomat_LF2_using_ti_group_V10" 
+        info: |
+          "Kaffeevollautomat_LF2_using_ti_group_V10
+          | R01 | B02=J | B03=Kaf
+          | R06 | B04=J
+          | R10 | B07=J
+          | R02 | B02=J | B03=Cap
+          | R07 | B04=N | B05=J
+          | R09 | B04=N | B05=N | B06=N
+          | R06 | B04=J
+          | R11 | B07=N | B08=J
+          | R03 | B02=J | B03=Mac
+          | R07 | B04=N | B05=J
+          | R06 | B04=J
+          | R12 | B07=N | B08=N
+          | R10 | B07=J"
+        tags:
+          - "recommended"
+        teststeps:
+          - teststep:
+            name: "Cafe Crema auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cafe Crema'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und über der Kaffeetasse 'Cafe Crema' steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Milch im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Cappucino auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cappucino'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und darüber Cappucino steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zucker drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Zucker."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Latte Macciato auswählen"
+            instruction: "Drücken Sie auf die Taste 'Latte Macciato'."
+            expectation: "Prüfen Sie, ob im Display ein Glas zu sehen ist und darüber Latte Macciato steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zucker drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Zucker."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+
+      - testcase: "0002 Kaffeevollautomat_LF2_using_ti_group_V10" 
+        info: |
+          "Kaffeevollautomat_LF2_using_ti_group_V10
+          | R01 | B02=J | B03=Kaf
+          | R07 | B04=N | B05=J
+          | R08 | B04=N | B05=N | B06=J
+          | R06 | B04=J
+          | R10 | B07=J
+          | R03 | B02=J | B03=Mac
+          | R09 | B04=N | B05=N | B06=N
+          | R07 | B04=N | B05=J
+          | R06 | B04=J
+          | R11 | B07=N | B08=J
+          | R02 | B02=J | B03=Cap
+          | R09 | B04=N | B05=N | B06=N | B04=N | B05=N | B06=N
+          | R06 | B04=J
+          | R12 | B07=N | B08=N
+          | R10 | B07=J"
+        tags:
+          - "recommended"
+        teststeps:
+          - teststep:
+            name: "Cafe Crema auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cafe Crema'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und über der Kaffeetasse 'Cafe Crema' steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Milch im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zucker drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Zucker."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Milch drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Milch."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Latte Macciato auswählen"
+            instruction: "Drücken Sie auf die Taste 'Latte Macciato'."
+            expectation: "Prüfen Sie, ob im Display ein Glas zu sehen ist und darüber Latte Macciato steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zucker drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Zucker."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Cappucino auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cappucino'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und darüber Cappucino steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+
+      - testcase: "0003 Kaffeevollautomat_LF2_using_ti_group_V10" 
+        info: |
+          "Kaffeevollautomat_LF2_using_ti_group_V10
+          | R01 | B02=J | B03=Kaf
+          | R08 | B04=N | B05=N | B06=J
+          | R07 | B04=N | B05=J
+          | R06 | B04=J
+          | R10 | B07=J
+          | R04 | B02=J | B03=Cho
+          | R09 | B04=N | B05=N | B06=N
+          | R06 | B04=J
+          | R11 | B07=N | B08=J
+          | R05 | B02=N
+          | R02 | B02=J | B03=Cap
+          | R06 | B04=J
+          | R12 | B07=N | B08=N
+          | R10 | B07=J"
+        tags:
+          - "recommended"
+        teststeps:
+          - teststep:
+            name: "Cafe Crema auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cafe Crema'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und über der Kaffeetasse 'Cafe Crema' steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Milch im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Milch drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Milch."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zucker drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Zucker."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Heiße Schokolade auswählen"
+            instruction: "Drücken Sie auf die Taste 'Heiße Schokolade'."
+            expectation: "Prüfen Sie, ob im Display eine Tasse zu sehen ist und Heiße Schokolade darüber steht."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Cappucino auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cappucino'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und darüber Cappucino steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+
+      - testcase: "0004 Kaffeevollautomat_LF2_using_ti_group_V10" 
+        info: |
+          "Kaffeevollautomat_LF2_using_ti_group_V10
+          | R01 | B02=J | B03=Kaf
+          | R09 | B04=N | B05=N | B06=N
+          | R08 | B04=N | B05=N | B06=J
+          | R09 | B04=N | B05=N | B06=N
+          | R06 | B04=J
+          | R10 | B07=J
+          | R05 | B02=N
+          | R03 | B02=J | B03=Mac
+          | R06 | B04=J
+          | R11 | B07=N | B08=J
+          | R04 | B02=J | B03=Cho
+          | R06 | B04=J
+          | R12 | B07=N | B08=N
+          | R10 | B07=J"
+        tags:
+          - "recommended"
+        teststeps:
+          - teststep:
+            name: "Cafe Crema auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cafe Crema'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und über der Kaffeetasse 'Cafe Crema' steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Milch im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Milch drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Milch."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Latte Macciato auswählen"
+            instruction: "Drücken Sie auf die Taste 'Latte Macciato'."
+            expectation: "Prüfen Sie, ob im Display ein Glas zu sehen ist und darüber Latte Macciato steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Heiße Schokolade auswählen"
+            instruction: "Drücken Sie auf die Taste 'Heiße Schokolade'."
+            expectation: "Prüfen Sie, ob im Display eine Tasse zu sehen ist und Heiße Schokolade darüber steht."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+
+      - testcase: "0005 Kaffeevollautomat_LF2_using_ti_group_V10" 
+        info: |
+          "Kaffeevollautomat_LF2_using_ti_group_V10
+          | R04 | B02=J | B03=Cho
+          | R06 | B04=J
+          | R12 | B07=N | B08=N
+          | R11 | B07=N | B08=J
+          | R01 | B02=J | B03=Kaf
+          | R08 | B04=N | B05=N | B06=J
+          | R07 | B04=N | B05=J
+          | R09 | B04=N | B05=N | B06=N
+          | R06 | B04=J
+          | R10 | B07=J
+          | R02 | B02=J | B03=Cap
+          | R06 | B04=J
+          | R11 | B07=N | B08=J"
+        tags:
+          - "recommended"
+        teststeps:
+          - teststep:
+            name: "Heiße Schokolade auswählen"
+            instruction: "Drücken Sie auf die Taste 'Heiße Schokolade'."
+            expectation: "Prüfen Sie, ob im Display eine Tasse zu sehen ist und Heiße Schokolade darüber steht."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Cafe Crema auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cafe Crema'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und über der Kaffeetasse 'Cafe Crema' steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Milch im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Milch drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Milch."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zucker drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Zucker."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Cappucino auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cappucino'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und darüber Cappucino steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+
+      - testcase: "0006 Kaffeevollautomat_LF2_using_ti_group_V10" 
+        info: |
+          "Kaffeevollautomat_LF2_using_ti_group_V10
+          | R04 | B02=J | B03=Cho
+          | R06 | B04=J
+          | R12 | B07=N | B08=N | B07=N | B08=N
+          | R10 | B07=J
+          | R01 | B02=J | B03=Kaf
+          | R06 | B04=J
+          | R10 | B07=J"
+        tags:
+          - "recommended"
+        teststeps:
+          - teststep:
+            name: "Heiße Schokolade auswählen"
+            instruction: "Drücken Sie auf die Taste 'Heiße Schokolade'."
+            expectation: "Prüfen Sie, ob im Display eine Tasse zu sehen ist und Heiße Schokolade darüber steht."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Cafe Crema auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cafe Crema'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und über der Kaffeetasse 'Cafe Crema' steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Milch im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+
+      - testcase: "0007 Kaffeevollautomat_LF2_using_ti_group_V10" 
+        info: |
+          "Kaffeevollautomat_LF2_using_ti_group_V10
+          | R05 | B02=N
+          | R04 | B02=J | B03=Cho
+          | R06 | B04=J
+          | R10 | B07=J
+          | R01 | B02=J | B03=Kaf
+          | R08 | B04=N | B05=N | B06=J
+          | R07 | B04=N | B05=J
+          | R09 | B04=N | B05=N | B06=N
+          | R06 | B04=J
+          | R11 | B07=N | B08=J
+          | R02 | B02=J | B03=Cap
+          | R06 | B04=J
+          | R12 | B07=N | B08=N
+          | R10 | B07=J"
+        tags:
+          - "recommended"
+        teststeps:
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Heiße Schokolade auswählen"
+            instruction: "Drücken Sie auf die Taste 'Heiße Schokolade'."
+            expectation: "Prüfen Sie, ob im Display eine Tasse zu sehen ist und Heiße Schokolade darüber steht."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Cafe Crema auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cafe Crema'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und über der Kaffeetasse 'Cafe Crema' steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Milch im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Milch drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Milch."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zucker drücken"
+            instruction: "Drücken Sie auf die Schaltfläche Zucker."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Cappucino auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cappucino'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und darüber Cappucino steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+
+      - testcase: "0008 Kaffeevollautomat_LF2_using_ti_group_V10" 
+        info: |
+          "Kaffeevollautomat_LF2_using_ti_group_V10
+          | R05 | B02=N | B02=N
+          | R01 | B02=J | B03=Kaf
+          | R06 | B04=J
+          | R10 | B07=J
+          | R02 | B02=J | B03=Cap
+          | R06 | B04=J
+          | R11 | B07=N | B08=J
+          | R03 | B02=J | B03=Mac
+          | R06 | B04=J
+          | R12 | B07=N | B08=N
+          | R10 | B07=J"
+        tags:
+          - "recommended"
+        teststeps:
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Cafe Crema auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cafe Crema'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und über der Kaffeetasse 'Cafe Crema' steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Milch im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Cappucino auswählen"
+            instruction: "Drücken Sie auf die Taste 'Cappucino'."
+            expectation: "Prüfen Sie, ob im Display eine Kaffeetasse zu sehen ist und darüber Cappucino steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
+          - teststep:
+            name: "Latte Macciato auswählen"
+            instruction: "Drücken Sie auf die Taste 'Latte Macciato'."
+            expectation: "Prüfen Sie, ob im Display ein Glas zu sehen ist und darüber Latte Macciato steht."
+          - teststep:
+            name: "Zuckertaste auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zucker im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf aktiv prüfen"
+            expectation: "Prüfen Sie, ob die Schaltfläche Zubreutung im Display aktiv dargestellt wird."
+          - teststep:
+            name: "Zubereitung starten"
+            instruction: "Drücken Sie auf die Schaltfläche Zubereitung."
+          - teststep:
+            name: "Zuckertaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schalfläche 'Zucker'."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Milchtaste auf inaktiv prüfen"
+            instruction: "Drücken Sie die Schaltfläche Milch."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Taste Zubereitung aktiv (wählbar) auf inaktiv prüfen"
+            instruction: "Drücken Sie die Taste Zubereitung."
+            expectation: "Der Vollautomat darf nicht 'piepsen' und die Taste soll ausgegraut bleiben."
+          - teststep:
+            name: "Zubereitung des Getränks prüfen."
+            expectation: |
+              "Prüfen Sie, ob
+                - im Display eine Animation gestartet wurde und das Gefäß 'gefüllt' wird
+                - das Gefäß unter der Getränkeausgabe gefüllt wird."
+          - teststep:
+            name: "Zubereitung abbrechen"
+            instruction: "Drücken Sie auf die Schaltfläche Abbrechen."
+          - teststep:
+            name: "Ende der Zubereitung prüfen"
+            expectation: "Prüfen Sie, ob im Display wieder die Auswahl der unterschiedlichen Getränke zu sehen sind."
