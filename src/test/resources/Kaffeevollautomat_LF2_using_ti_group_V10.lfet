@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.2.0 (220208a)" language="German" saveDate="2022.02.10 at 10:53:04 CET" saveUser="lfhl">
+<LFET version="LF-ET 2.2.1 (220711a)" language="German" saveDate="2022.07.12 at 00:23:14 CEST" saveUser="constantin">
   <Conditions>
     <Condition uId="11446800829457960">
       <Title language="German" value="Zubereitungsphase?"/>
@@ -70,6 +70,7 @@
           <TestValue group="*ti.att.standard" type="tsi" value="name=&quot;${*LFET.Title} auswählen&quot;"/>
         </ConditionOccurrence>
       </ConditionOccurrences>
+      <Text language="German" value="// $$Enum.Plain"/>
     </Condition>
     <Condition uId="15622193202567161">
       <Title language="German" value="Taste Zubereitung gedrückt?"/>
@@ -255,7 +256,7 @@
       </ActionOccurrences>
     </Action>
   </Actions>
-  <Rules lastId="28">
+  <Rules lastId="30">
     <Rule id="4">
       <ConditionOccurrenceLink link="15622181404256862"/>
       <ConditionOccurrenceLink link="15622191824477075"/>
@@ -331,15 +332,15 @@
       <ConditionOccurrenceLink link="15740986857768239"/>
       <ConditionOccurrenceLink link="15740986861118249"/>
     </Rule>
-    <Rule id="24">
+    <Rule id="29">
       <ConditionOccurrenceLink link="15622185893736871"/>
-      <ActionOccurrenceLink link="15622197825079291"/>
+      <ActionOccurrenceLink link="16439713600090873"/>
       <ActionOccurrenceLink link="15622209091501174"/>
       <ConditionOccurrenceLink link="15740986861188256"/>
     </Rule>
-    <Rule id="25">
+    <Rule id="30">
       <ConditionOccurrenceLink link="15622185893736871"/>
-      <ActionOccurrenceLink link="15622197825079291"/>
+      <ActionOccurrenceLink link="16439713600090873"/>
       <ActionOccurrenceLink link="15622209091501174"/>
       <ConditionOccurrenceLink link="15740986861208258"/>
       <ConditionOccurrenceLink link="15740986861288266"/>

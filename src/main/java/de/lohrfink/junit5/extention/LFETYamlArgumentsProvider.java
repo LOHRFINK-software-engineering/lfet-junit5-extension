@@ -31,7 +31,7 @@ public class LFETYamlArgumentsProvider implements ArgumentsProvider {
         InputStream resourceAsStream = testClass.getResourceAsStream("/" + lfetYamlSource.value());
         TestSuites testSuites = objectMapper.readValue(resourceAsStream, TestSuites.class);
 
-        return testSuites.getTestSuites().stream().filter(TestSuite::isRecommendedTestCases).flatMap(testsuite -> testsuite.getTestcases().stream()).map(Arguments::of);
+        return testSuites.getTestSuites().stream().flatMap(testsuite -> testsuite.getTestcases().stream()).map(Arguments::of);
 
     }
 }
