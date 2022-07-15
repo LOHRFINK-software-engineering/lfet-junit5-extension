@@ -3,3 +3,4 @@ target
 *.iml
 *.lfet.*.$bak
 release.properties
+pom.xml.releaseBackup
