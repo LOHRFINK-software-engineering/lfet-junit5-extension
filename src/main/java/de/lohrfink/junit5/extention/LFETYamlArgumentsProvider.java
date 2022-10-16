@@ -7,31 +7,115 @@ import de.lohrfink.junit5.extention.model.TestSuites;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
+import org.junit.jupiter.params.support.AnnotationConsumer;
+import org.junit.platform.commons.JUnitException;
+import org.junit.platform.commons.util.Preconditions;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class LFETYamlArgumentsProvider implements ArgumentsProvider {
+public class LFETYamlArgumentsProvider implements ArgumentsProvider, AnnotationConsumer<LFETYamlSource> {
 
-    final ObjectMapper objectMapper;
+    private final InputStreamProvider inputStreamProvider;
+
+    private ObjectMapper objectMapper;
+
+    private LFETYamlSource annotation;
+
+    private List<Source> sources;
+
 
     public LFETYamlArgumentsProvider() {
-        this.objectMapper = new ObjectMapper(new YAMLFactory());
+        this(DefaultInputStreamProvider.INSTANCE);
+    }
+
+    public LFETYamlArgumentsProvider(InputStreamProvider inputStreamProvider) {
+        this.inputStreamProvider = inputStreamProvider;
     }
 
 
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext extensionContext) throws Exception {
 
-        final var testMethod = extensionContext.getRequiredTestMethod();
-        final var testClass = testMethod.getDeclaringClass();
+        return Preconditions.notEmpty(this.sources, "Resources or files must not be empty!")
+                .stream()
+                .map(source -> source.open(extensionContext))
+                .map(this::readYaml)
+                .flatMap(Collection::stream)
+                .flatMap(testSuite -> testSuite.getTestcases().stream())
+                .map(Arguments::of);
+    }
 
-        final LFETYamlSource lfetYamlSource = testMethod.getAnnotation(LFETYamlSource.class);
+    private List<TestSuite> readYaml(InputStream inputStream) {
+        try {
+            return objectMapper.readValue(inputStream, TestSuites.class).getTestSuites();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-        InputStream resourceAsStream = testClass.getResourceAsStream("/" + lfetYamlSource.value());
-        TestSuites testSuites = objectMapper.readValue(resourceAsStream, TestSuites.class);
+    @Override
+    public void accept(LFETYamlSource annotation) {
+       this.annotation = annotation;
+       this.objectMapper = new ObjectMapper(new YAMLFactory());
+       Stream<Source> resources = Stream.of(annotation.resources()).map(inputStreamProvider::classpathResource);
+       Stream<Source> files = Stream.of(annotation.files()).map(inputStreamProvider::file);
+       this.sources = Stream.concat(resources, files).collect(Collectors.toList());
+    }
 
-        return testSuites.getTestSuites().stream().flatMap(testsuite -> testsuite.getTestcases().stream()).map(Arguments::of);
+    @FunctionalInterface
+    private interface Source {
+
+        InputStream open(ExtensionContext context);
 
     }
+
+    interface InputStreamProvider {
+
+        InputStream openClasspathResource(Class<?> baseClass, String path);
+
+        InputStream openFile(String path);
+
+        default Source classpathResource(String path) {
+            return context -> openClasspathResource(context.getRequiredTestClass(), path);
+        }
+
+        default Source file(String path) {
+            return context -> openFile(path);
+        }
+
+    }
+
+    private static class DefaultInputStreamProvider implements InputStreamProvider {
+
+        private static final DefaultInputStreamProvider INSTANCE = new DefaultInputStreamProvider();
+
+        @Override
+        public InputStream openClasspathResource(Class<?> baseClass, String path) {
+            Preconditions.notBlank(path, () -> "Classpath resource [" + path + "] must not be null or blank");
+            //noinspection resource
+            InputStream inputStream = baseClass.getResourceAsStream(path);
+            return Preconditions.notNull(inputStream, () -> "Classpath resource [" + path + "] does not exist");
+        }
+
+        @Override
+        public InputStream openFile(String path) {
+            Preconditions.notBlank(path, () -> "File [" + path + "] must not be null or blank");
+            try {
+                return Files.newInputStream(Paths.get(path));
+            }
+            catch (IOException e) {
+                throw new JUnitException("File [" + path + "] could not be read", e);
+            }
+        }
+
+    }
+
+
 }

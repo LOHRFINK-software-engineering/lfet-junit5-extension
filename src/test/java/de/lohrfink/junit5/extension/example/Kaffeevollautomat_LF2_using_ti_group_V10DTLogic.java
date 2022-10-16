@@ -12,9 +12,6 @@
 
 package de.lohrfink.junit5.extension.example;
 
-import javax.annotation.processing.Generated;
-
-@Generated("LFET")
 public final class Kaffeevollautomat_LF2_using_ti_group_V10DTLogic
 {
     public final <T> void execute(Kaffeevollautomat_LF2_using_ti_group_V10DT<T> iface, T model)

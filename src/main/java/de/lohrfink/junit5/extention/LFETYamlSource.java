@@ -2,18 +2,23 @@ package de.lohrfink.junit5.extention;
 
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
 @ArgumentsSource(LFETYamlArgumentsProvider.class)
+@Documented
 public @interface LFETYamlSource {
 
     /**
-     * @return the name of the yaml resource that contains the test data.
+     * The CSV classpath resources to use as the sources of arguments; must not
+     * be empty unless {@link #files} is non-empty.
      */
-    String value();
+    String[] resources() default {};
+
+    /**
+     * The CSV files to use as the sources of arguments; must not be empty
+     * unless {@link #resources} is non-empty.
+     */
+    String[] files() default {};
 }
