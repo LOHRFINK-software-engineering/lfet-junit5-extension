@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.lohrfink</groupId>
     <artifactId>lfet-junit5-extension</artifactId>
-    <version>0.5.0-SNAPSHOT</version>
+    <version>0.5.0</version>
 
     <url>https://github.com/uniqueck/lfet-junit5-extension</url>
     <name>LFET JUnit5 Extension</name>
@@ -11,7 +11,7 @@
         <connection>scm:git:https://github.com/uniqueck/lfet-junit5-extension.git</connection>
         <developerConnection>scm:git:git@github.com:uniqueck/lfet-junit5-extension.git</developerConnection>
         <url>git@github.com:uniqueck/lfet-junit5-extension.git</url>
-        <tag>HEAD</tag>
+        <tag>@0.5.0-SNAPSHOT</tag>
     </scm>
 
     <distributionManagement>
